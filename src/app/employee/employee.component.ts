@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../services/employee.service';
 import { EmployeesComponent } from '../employees/employees.component';
 import { Employee } from '../models/employee';
 import { Location } from '@angular/common';
@@ -25,8 +25,9 @@ export class EmployeeComponent implements OnInit {
 
   async getEmployee() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.employee = await this.empService.getEmployee(id);
+    this.employee = await this.empService.getEmployeeAsync(id);
   }
+  
   goBack() {
     this.location.back();
   }

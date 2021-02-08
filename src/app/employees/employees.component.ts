@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../models/employee';
 
 @Component({
@@ -16,7 +16,14 @@ export class EmployeesComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.employees = await this.employeeService.getAllEmployees();
+    // this.employeeService.getAllEmployees().subscribe(
+    //   (data: Employee[]) => {
+    //     this.employees = data;
+    //   }
+    // )
+
+    this.employees = await this.employeeService.getAllEmployeesAsync();
+
   }
   
 }

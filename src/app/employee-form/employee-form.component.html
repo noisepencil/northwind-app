@@ -1,0 +1,17 @@
+<div class="form-container">
+
+    <div class="form-group">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName"
+            name="firstName">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+    </div>
+    <div class="toolbar">
+        <button (click)="goBack()">Back</button>
+    </div>
+</div>
+

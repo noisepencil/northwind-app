@@ -16,12 +16,7 @@ export class EmployeesComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    // this.employeeService.getAllEmployees().subscribe(
-    //   (data: Employee[]) => {
-    //     this.employees = data;
-    //   }
-    // )
-
+  
     this.employees = await this.employeeService.getAllEmployeesAsync();
 
   }

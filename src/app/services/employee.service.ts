@@ -48,4 +48,14 @@ export class EmployeeService {
     return await this.http.get<Employee>(url).toPromise();
   }
 
+  public async updateEmployee(emp: Employee): Promise<Employee> {
+    let url = `${this.apiBaseUrl}/employees/${emp.id}`;
+    return await this.http.patch<Employee>(url, emp).toPromise();
+  }
+
+  public async addEmployee(emp: Employee): Promise<Employee> {
+    let url = `${this.apiBaseUrl}/employees`;
+    return await this.http.post<Employee>(url, emp).toPromise();
+  }
+
 }

@@ -1,5 +1,10 @@
-<div class="form-container">
 
+<div class="form-container" *ngIf="employee">
+
+    <h3>{{ formTitle }}</h3>
+    <div class="message" *ngIf="message">
+        {{ message }}
+    </div>
     <div class="form-group">
         <label for="firstName">First name</label>
         <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName"
@@ -11,7 +16,8 @@
         <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
     </div>
     <div class="toolbar">
-        <button (click)="goBack()">Back</button>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+        <button class="btn btn-secondary" (click)="goBack()">Back</button>
     </div>
 </div>
 

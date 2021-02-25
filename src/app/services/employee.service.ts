@@ -42,6 +42,15 @@ export class EmployeeService {
 
     return response;
   }
+  public async getAllEmployeesWithFilterAsync(filterTxt: string): Promise<Employee[]> {
+
+    let url = `${this.apiBaseUrl}/employees?filter=${filterTxt}`;
+    // async/await only works on promises, but http.get returns an observable -
+    // but observables have a .toPromise() method to convert it to one :)
+    let response = this.http.get<Employee[]>(url, this.httpOptions).toPromise();
+
+    return response;
+  }
   
   public async getEmployeeAsync(id: number): Promise<Employee> {
     let url = `${this.apiBaseUrl}/employees/${id}`;

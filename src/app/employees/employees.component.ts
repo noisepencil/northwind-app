@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class EmployeesComponent implements OnInit {
 
   public employees: Employee[] = [];
+  public filterTxt: string = "";
 
   constructor(
     private employeeService: EmployeeService,
@@ -26,4 +27,10 @@ export class EmployeesComponent implements OnInit {
   add() {
     this.router.navigateByUrl('/employee/new')
   }
+
+  async onFilterClick() {
+    // apply the filter re-fetching the data
+    this.employees = await this.employeeService.getAllEmployeesWithFilterAsync(this.filterTxt);
+  }
+
 }

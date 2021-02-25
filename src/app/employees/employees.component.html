@@ -2,6 +2,10 @@
 <div class="toolbar">
     <button class="btn btn-success" (click)=add()>Add employee</button>
 </div>
+<div class="filterBox">
+    <input id="txtFilter" name="txtFilter" [(ngModel)]="filterText" />
+    <button id="btnSearch" (click)="applyFilter()">Search</button>
+</div>
 <ul class="list">
     <li class="list-column" *ngFor="let emp of employees">
         <a routerLink="/employee/{{emp.id}}">

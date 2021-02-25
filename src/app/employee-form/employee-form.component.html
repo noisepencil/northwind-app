@@ -1,5 +1,5 @@
-
-<div class="form-container" *ngIf="employee">
+<app-employee-bio [employee]="employee" (saved)="onSave($event)"></app-employee-bio>
+<div class="form-container" *ngIf="false">
 
     <h3>{{ formTitle }}</h3>
     <div class="message" *ngIf="message">

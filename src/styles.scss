@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
-@import url("https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css");
+// @import url("https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css");
 
+/*
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,6 +17,7 @@ h3 {
 body {
   margin: 2em;
 }
+*/
 /*
 body,
 input[type="text"],
@@ -24,7 +26,14 @@ button {
   font-family: Cambria, Georgia, serif;
 }
 */
+
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+//@import '@angular/material/prebuilt-themes/pink-bluegrey.css';

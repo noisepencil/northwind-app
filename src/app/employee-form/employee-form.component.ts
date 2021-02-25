@@ -49,7 +49,11 @@ export class EmployeeFormComponent implements OnInit {
   goBack() {
     this.location.back();
   }
-
+  async onSave(emp: Employee){
+    console.log('OnSave gave us:', emp);
+    console.log('my emp is currently:', this.employee);
+    await this.save();
+  }
   async save() {
 
     // clear validation message if any

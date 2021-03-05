@@ -7,12 +7,14 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { FormsModule } from '@angular/forms';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

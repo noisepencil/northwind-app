@@ -1,0 +1,49 @@
+<h2>Product List</h2>
+<div class="filterBar">
+    <select [(ngModel)] = "nameFilter" style="width:200px;" (change)="refresh()" class="form-control">
+        <option value="">
+            All products
+        </option>
+        <option value="chef">
+            Chef
+        </option>
+        <option value="anton">
+            Anton
+        </option>
+        <option value="kobe">
+            Kobe
+        </option>
+    </select>
+    
+    <select [(ngModel)] = "discontinuedFilter" (change)="refresh()" style="width:200px;" class="form-control">
+        <option value="">
+            Both
+        </option>
+        <option value="0">
+            Still avaliable
+        </option>
+        <option value="1">
+            Discontinued
+        </option>
+    </select>    
+</div>
+<table class="table">
+    <thead>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Discontinued</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products" scope="row">
+            <td>
+                {{ p.productID}} 
+             </td>
+             <td>
+                {{ p.productName}} 
+             </td>
+             <td>
+                {{ p.discontinued}} 
+             </td>
+          </tr>
+    </tbody>
+</table>
